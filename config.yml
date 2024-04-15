@@ -1,3 +1,25 @@
+# ---------------------------------------------------------------------------------
+# Configuración de Plex Meta Manager
+# ---------------------------------------------------------------------------------
+# Autor: Sergio Perea
+# Fecha de creación: 2024-04-15
+# Descripción:
+#   Este archivo 'config.yml' contiene la configuración central para Plex Meta Manager
+#   en mi servidor Plex. Incluye definiciones para la conexión con el servidor Plex,
+#   ajustes de bibliotecas, y referencias a archivos de metadata adicionales.
+#
+# Propósito:
+#   Este archivo es usado para automatizar y personalizar la gestión de las
+#   bibliotecas de películas y series en Plex, integrando metadatos avanzados y
+#   personalizaciones visuales como overlays de clasificación por edades y más.
+#
+# Contacto:
+#   Si necesitas contactarme por cualquier duda o sugerencia sobre esta configuración,
+#   puedes contactarme a través de https://sperea.es
+# ---------------------------------------------------------------------------------
+
+# Aquí comienza la configuración del servidor Plex y otros ajustes globales
+
 libraries:
   Películas:
     metadata_files:
