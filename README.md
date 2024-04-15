@@ -16,7 +16,7 @@ Para usar estos archivos de configuración en tu instancia de Plex Meta Manager,
 
 1. Clona este repositorio en tu sistema local o servidor donde está instalado Plex Meta Manager.
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git
+   git clone https://github.com/sperea/plex_meta_manager_config
 
 2. Copia los archivos de configuración al directorio de Plex Meta Manager, o configúralo para que use directamente este directorio clonado.
 
