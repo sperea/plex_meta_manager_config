@@ -1,0 +1,225 @@
+libraries:
+  Películas:
+    metadata_files:
+    - pmm: imdb
+    metadata_path:
+    - config/decade.yml
+    collection_files:
+    - pmm: decade 
+      template_variables:
+        sep_style: ocean    
+    - pmm: universe   
+    - pmm: director  
+      template_variables:                
+        style: signature
+        data:
+          depth: 1
+          limit: 15
+    - pmm: actor
+    - pmm: separator_award
+    - pmm: oscars
+    - pmm: venice
+    - pmm: berlinale
+    - pmm: cannes
+    - pmm: sundance
+    - pmm: cesar
+    - pmm: choice
+    - pmm: golden
+    - pmm: spirit
+    - pmm: pca
+    - pmm: razzie
+    operations:
+      split_duplicates: false
+      assets_for_all: true
+      mass_user_rating_update: mdb_tomatoes
+      mass_critic_rating_update: imdb
+      mass_audience_rating_update: tmdb
+      mass_content_rating_update: mdb_commonsense                                        # Changes Content Rating from omdb if not found on mdb_commonsense
+    overlay_files:
+    - file: config/overlay.yml
+    - pmm: decade
+    - pmm: commonsense
+      template_variables:
+        pre_text: "C-"
+    - pmm: resolution
+    - pmm: audio_codec
+    - pmm: mediastinger
+    - pmm: streaming   
+    - pmm: universe 
+    - pmm: ratings
+      template_variables:
+        rating1: audience
+        rating1_image: rt_tomato
+        rating2: critic
+        rating2_image: imdb
+    - pmm: streaming
+    - pmm: video_format
+    - pmm: language_count
+    - pmm: separator_award
+    - pmm: director  
+      template_variables:                
+        style: signature
+        data:
+          depth: 1
+          limit: 15
+    - pmm: genre
+      template_variables:
+        sep_style: green 
+        sort_by: title.asc 
+        sort_by_2020: release.desc
+  Películas Familiares:
+    metadata_files:
+    - pmm: imdb
+    metadata_path:
+    - config/decade.yml
+    collection_files:
+    - pmm: decade     
+    - pmm: universe   
+    - pmm: director  
+      template_variables:                
+        style: signature
+        data:
+          depth: 1
+          limit: 15
+    - pmm: universe
+    - pmm: actor
+    - pmm: separator_award
+    - pmm: oscars
+    - pmm: venice
+    - pmm: berlinale
+    - pmm: cannes
+    - pmm: sundance
+    - pmm: cesar
+    - pmm: choice
+    - pmm: golden
+    - pmm: spirit
+    - pmm: pca
+    - pmm: razzie
+
+    overlay_files:
+    - file: config/overlay.yml
+    - pmm: decade
+    - pmm: resolution
+    - pmm: audio_codec
+    - pmm: mediastinger
+    - pmm: streaming   
+    - pmm: universe 
+    - pmm: ratings
+      template_variables:
+        rating1: audience
+        rating1_image: rt_tomato
+        rating2: critic
+        rating2_image: imdb
+    - pmm: streaming
+    - pmm: video_format
+    - pmm: language_count
+    - pmm: separator_award
+    - pmm: director  
+      template_variables:                
+        style: signature
+        data:
+          depth: 1
+          limit: 15
+    - pmm: genre
+      template_variables:
+        sep_style: green 
+        sort_by: title.asc 
+        sort_by_2020: release.desc
+  Series: 
+    metadata_files:
+    - config/tv.yml
+    - pmm: tmdb         
+    - pmm: audio_language   
+    - pmm: resolution 
+    - pmm: decade
+      template_variables:
+        sep_style: red 
+        sort_by: title.asc 
+        sort_by_2020: release.desc
+    overlay_files:
+    - file: config/overlay.yml
+    - pmm: resolution
+    - pmm: video_format
+    - pmm: audio_codec 
+  Series Niños: 
+    metadata_files:
+    - config/tv.yml
+    - pmm: tmdb  
+    - pmm: audio_language 
+    - pmm: resolution 
+    - pmm: decade
+      template_variables:
+        sep_style: red 
+        sort_by: title.asc 
+        sort_by_2020: release.desc  
+    overlay_files:
+    - file: config/overlay.yml
+    - pmm: resolution
+    - pmm: video_format
+    - pmm: audio_codec 
+  Series Anime: 
+    metadata_files:
+    - config/tv.yml
+    - pmm: tmdb     
+    - pmm: audio_language       
+    - pmm: resolution       
+    - pmm: decade
+      template_variables:
+        sep_style: red 
+        sort_by: title.asc 
+        sort_by_2020: release.desc    
+    overlay_files:
+    - file: config/overlay.yml
+    - pmm: resolution
+    - pmm: video_format
+    - pmm: audio_codec 
+settings:
+  run_order:
+  - operations
+  - metadata
+  - collections
+  - overlays
+  cache: true
+  cache_expiration: 60
+  asset_directory: config/assets
+  asset_folders: true
+  asset_depth: 0
+  create_asset_folders: true
+  prioritize_assets: true
+  dimensional_asset_rename: false
+  download_url_assets: true
+  show_missing_season_assets: false
+  show_missing_episode_assets: false
+  show_asset_not_needed: true
+  sync_mode: append
+  minimum_items: 1
+  default_collection_order:
+  delete_below_minimum: true
+  delete_not_scheduled: false
+  run_again_delay: 2
+  missing_only_released: false
+  only_filter_missing: false
+  show_unmanaged: true
+  show_unconfigured: true
+  show_filtered: false
+  show_options: true
+  show_missing: true
+  show_missing_assets: true
+  save_report: false
+  tvdb_language: es
+  ignore_ids:
+  ignore_imdb_ids:
+  item_refresh_delay: 0
+  playlist_sync_to_user: all
+  playlist_exclude_users:
+  playlist_report: false
+  verify_ssl: true
+  custom_repo:
+  check_nightly: false
+webhooks:
+  error:
+  version:
+  run_start:
+  run_end:
+  changes:
+  delete:
